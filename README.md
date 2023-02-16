@@ -30,6 +30,7 @@ $ (venv) python3 mavlink130.py
 $ deactivate 
 
 in ubuntu18,19,20 open a terminal alt-ctl T
+$ python3 -m pip install -r requirements.txt
 $ git clone git@github.com:jerryfat/JerryGCS.git
 $ cd JerryGCS/
 $ python3 mavlink134.py 
