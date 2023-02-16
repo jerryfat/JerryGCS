@@ -28,4 +28,11 @@ $ (venv) python3 mavlink130.py
 
   #deactivate virtual env
 $ deactivate 
+
+in ubuntu18,19,20 open a terminal alt-ctl T
+$ git clone git@github.com:jerryfat/JerryGCS.git
+$ cd JerryGCS/
+$ python3 mavlink134.py 
+ 
+ 
 # JerryGCS
