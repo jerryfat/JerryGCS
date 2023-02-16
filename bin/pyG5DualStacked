@@ -1,0 +1,11 @@
+#!/home/jf/env/bin/python3
+"""Script added to path running the pyG5 in dual stack mode."""
+
+import sys
+
+from pyG5.pyG5Main import pyG5App
+
+"""Main application."""
+a = pyG5App()
+
+sys.exit(a.exec_())

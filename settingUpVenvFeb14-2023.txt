@@ -1,0 +1,275 @@
+cd /home/jf
+mkdir env
+cd env
+jf@jf1:~/env$ python3 -m venv env
+
+(env) jf@jf1:~/env$ source ./env/bin/activate
+(env) jf@jf1:~/env$python3 -m pip freeze > requirement.txt.orig
+(env) jf@jf1:~/env$ python3 mavlink129.py
+(env) jf@jf1:~/env$pip install pyqt5
+Collecting pyqt5
+  Downloading PyQt5-5.15.7-cp37-abi3-manylinux1_x86_64.whl (8.4 MB)
+     |████████████████████████████████| 8.4 MB 562 kB/s 
+Collecting PyQt5-sip<13,>=12.11
+  Downloading PyQt5_sip-12.11.0-cp38-cp38-manylinux1_x86_64.whl (361 kB)
+     |████████████████████████████████| 361 kB 3.2 MB/s 
+Collecting PyQt5-Qt5>=5.15.0
+  Downloading PyQt5_Qt5-5.15.2-py3-none-manylinux2014_x86_64.whl (59.9 MB)
+     |████████████████████████████████| 59.9 MB 3.4 MB/s 
+Installing collected packages: PyQt5-sip, PyQt5-Qt5, pyqt5
+Successfully installed PyQt5-Qt5-5.15.2 PyQt5-sip-12.11.0 pyqt5-5.15.7
+
+ERROR: No matching distribution found for viewMdi
+copied over files
+/home/jf/mavlink-OCT4/viewMdi.cmd
+/home/jf/mavlink-OCT4/viewMdi.py
+/home/jf/mavlink-OCT4/viewMdi.pyw
+/home/jf/mavlink-OCT4/viewMdi.ui
+
+(env) jf@jf1:~/env$ ls viewMdi.*
+viewMdi.cmd  viewMdi.py  viewMdi.pyw  viewMdi.ui
+...
+ModuleNotFoundError: No module named 'viewLCDClock'
+(env) jf@jf1:~/env$ ls viewLCD*.*
+viewLCDClock.cmd  viewLCDClock.py  viewLCDClock.pyw  viewLCDClock.ui
+
+cp
+/home/jf/mavlink-OCT4/viewLCDClock.cmd
+/home/jf/mavlink-OCT4/viewLCDClock.py
+/home/jf/mavlink-OCT4/viewLCDClock.pyw
+/home/jf/mavlink-OCT4/viewLCDClock.ui
+
+(env) jf@jf1:~/env$ ls viewLCD*.*
+viewLCDClock.cmd  viewLCDClock.py  viewLCDClock.pyw  viewLCDClock.ui
+
+ModuleNotFoundError: No module named 'pandas'
+
+(env) jf@jf1:~/env$ pip3 install pandas
+Collecting pandas
+  Downloading pandas-1.5.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+     |████████████████████████████████| 12.2 MB 3.2 MB/s 
+Collecting numpy>=1.20.3; python_version < "3.10"
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.1 MB)
+     |████████████████████████████████| 17.1 MB 3.0 MB/s 
+Collecting python-dateutil>=2.8.1
+  Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting pytz>=2020.1
+  Downloading pytz-2022.6-py2.py3-none-any.whl (498 kB)
+     |████████████████████████████████| 498 kB 1.6 MB/s 
+Collecting six>=1.5
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: numpy, six, python-dateutil, pytz, pandas
+Successfully installed numpy-1.23.5 pandas-1.5.2 python-dateutil-2.8.2 pytz-2022.6 six-1.16.0
+
+(env) jf@jf1:~/env$ 
+cp
+/home/jf/mavlink-OCT4/MainWindowMdi.py
+cp
+/home/jf/mavlink-OCT4/ContLCDClock.py
+cp
+/home/jf/mavlink-OCT4/ContMdi.py
+cp
+/home/jf/mavlink-OCT4/contLCDClock.py
+(env) jf@jf1:~/env$ python3 mavlink129.py
+ModuleNotFoundError: No module named 'dronekit'
+(env) jf@jf1:~/env$ pip3 install dronekit
+Collecting dronekit
+  Using cached dronekit-2.9.2-py3-none-any.whl (56 kB)
+Collecting pymavlink>=2.2.20
+  Downloading pymavlink-2.4.37-py3-none-any.whl (5.8 MB)
+     |████████████████████████████████| 5.8 MB 3.1 MB/s 
+Collecting monotonic>=1.3
+  Using cached monotonic-1.6-py2.py3-none-any.whl (8.2 kB)
+Collecting lxml
+  Downloading lxml-4.9.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.9 MB)
+     |████████████████████████████████| 6.9 MB 2.1 MB/s 
+Processing /home/jf/.cache/pip/wheels/8e/70/28/3d6ccd6e315f65f245da085482a2e1c7d14b90b30f239e2cf4/future-0.18.2-py3-none-any.whl
+Installing collected packages: lxml, future, pymavlink, monotonic, dronekit
+Successfully installed dronekit-2.9.2 future-0.18.2 lxml-4.9.1 monotonic-1.6 pymavlink-2.4.37
+(env) jf@jf1:~/env$ 
+ModuleNotFoundError: No module named 'dronekit_sitl'
+(env) jf@jf1:~/env$ pip3 install dronekit_sitl
+Collecting dronekit_sitl
+  Using cached dronekit_sitl-3.3.0-py3-none-any.whl (38 kB)
+Requirement already satisfied: six>=1.10 in ./lib/python3.8/site-packages (from dronekit_sitl) (1.16.0)
+Requirement already satisfied: dronekit>=2.0.0b6 in ./lib/python3.8/site-packages (from dronekit_sitl) (2.9.2)
+Collecting psutil>=3.0
+  Downloading psutil-5.9.4-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
+     |████████████████████████████████| 280 kB 2.9 MB/s 
+Requirement already satisfied: monotonic>=1.3 in ./lib/python3.8/site-packages (from dronekit>=2.0.0b6->dronekit_sitl) (1.6)
+Requirement already satisfied: pymavlink>=2.2.20 in ./lib/python3.8/site-packages (from dronekit>=2.0.0b6->dronekit_sitl) (2.4.37)
+Requirement already satisfied: lxml in ./lib/python3.8/site-packages (from pymavlink>=2.2.20->dronekit>=2.0.0b6->dronekit_sitl) (4.9.1)
+Requirement already satisfied: future in ./lib/python3.8/site-packages (from pymavlink>=2.2.20->dronekit>=2.0.0b6->dronekit_sitl) (0.18.2)
+Installing collected packages: psutil, dronekit-sitl
+Successfully installed dronekit-sitl-3.3.0 psutil-5.9.4
+(env) jf@jf1:~/env$ 
+cp /home/jf/env/pyG5/pyG5ViewTester.py
+
+
+
+(env) jf@jf1:~/env/pyG5$ ls
+__init__.py  pyG5Main.py  pyG5Network.py  pyG5View.py  pyG5ViewTester.py
+(env) jf@jf1:~/env/pyG5$ ls -als
+total 84
+ 4 drwx------ 2 jf jf  4096 May 23  2022 .
+ 4 drwxrwxr-x 8 jf jf  4096 Dec 10 19:04 ..
+ 4 -rw-rw-r-- 1 jf jf    20 May 23  2022 __init__.py
+ 4 -rw-rw-r-- 1 jf jf  3297 May 23  2022 pyG5Main.py
+16 -rw-rw-r-- 1 jf jf 14901 May 23  2022 pyG5Network.py
+44 -rw-rw-r-- 1 jf jf 42852 May 23  2022 pyG5View.py
+ 8 -rw-rw-rw- 1 jf jf  4180 May 23  2022 pyG5ViewTester.py
+(env) jf@jf1:~/env/pyG5$ chmod +x *
+(env) jf@jf1:~/env/pyG5$ ls -als
+total 84
+ 4 drwx------ 2 jf jf  4096 May 23  2022 .
+ 4 drwxrwxr-x 8 jf jf  4096 Dec 10 19:04 ..
+ 4 -rwxrwxr-x 1 jf jf    20 May 23  2022 __init__.py
+ 4 -rwxrwxr-x 1 jf jf  3297 May 23  2022 pyG5Main.py
+16 -rwxrwxr-x 1 jf jf 14901 May 23  2022 pyG5Network.py
+44 -rwxrwxr-x 1 jf jf 42852 May 23  2022 pyG5View.py
+ 8 -rwxrwxrwx 1 jf jf  4180 May 23  2022 pyG5ViewTester.py
+
+# compress MAVGCSenv130 dir into tar.gz
+jf@jf1:~$ tar -zc MAVGCSenv130.tar.gz MAVGCSenv130 
+
+(env) jf@jf1:~/env$ pip install pyG5
+Collecting pyG5
+  Using cached pyG5-0.0.2-py3-none-any.whl (16 kB)
+Installing collected packages: pyG5
+Successfully installed pyG5-0.0.2
+
+to start env
+source ./env/bin/activate
+(env) jf@jf1:~/env$
+deactivate
+
+
+jf@jf1:~$ python -m venv new-venv
+/usr/bin/python: No module named venv
+jf@jf1:~$ python3 -m venv new-venv
+
+
+jf@jf1:~$ tar -zxvf  MAVGCS129env.tar.gz MAVGCS129env
+uncompress and create env dir
+creates MAVGCS129env dir
+jf@jf1:~/env$ ls
+bin               mavlink129.py               share
+common.xml        mavlink_win_class.py        viewLCDClock.cmd
+contLCDClock.py   mavlink_win_clock_class.py  viewLCDClock.py
+ContLCDClock.py   MavVars.py                  viewLCDClock.pyw
+ContMdi.py        __pycache__                 viewLCDClock.ui
+include           pyG5                        viewMdi.cmd
+lib               pyvenv.cfg                  viewMdi.py
+lib64             requirement.txt             viewMdi.pyw
+MainWindowMdi.py  requirement.txt.orig        viewMdi.ui
+
+jf@jf1:~/env$ cd ..
+jf@jf1:~$ source ./env/bin/activate
+(env) jf@jf1:~$ cd env
+python -m pip install -r requirements.txt
+
+jf@jf1:~/env$ ls
+bin               mavlink129.py               share
+common.xml        mavlink_win_class.py        viewLCDClock.cmd
+contLCDClock.py   mavlink_win_clock_class.py  viewLCDClock.py
+ContLCDClock.py   MavVars.py                  viewLCDClock.pyw
+ContMdi.py        __pycache__                 viewLCDClock.ui
+include           pyG5                        viewMdi.cmd
+lib               pyvenv.cfg                  viewMdi.py
+lib64             requirement.txt             viewMdi.pyw
+MainWindowMdi.py  requirement.txt.orig        viewMdi.ui
+jf@jf1:~/env$ cd ..
+jf@jf1:~$ source ./env/bin/activate
+(env) jf@jf1:~$ 
+(env) jf@jf1:~$ cd env
+(env) jf@jf1:~/env$ python3 mavlink129.py
+to deactivate oir leave env...
+(env) jf@jf1:~/env$ deactivate
+jf@jf1:~/env$ cd ..
+jf@jf1:~$ pwd
+/home/jf
+jf@jf1:~$ source ./env/bin/activate
+(env) jf@jf1:~$ python3 mavlink129.py
+python3: can't open file 'mavlink129.py': [Errno 2] No such file or directory
+have to be in env dir to run py
+(env) jf@jf1:~$ cd env
+(env) jf@jf1:~/env$ python3 mavlink129.py
+
+(env) jf@jf1:~/env$ python3 -V
+Python 3.8.10
+
+
+(new-venv) PS> python -m pip install -r requirements.txt
+
+#download from google drive MAVGCSenv130.tar.gz 
+https://drive.google.com/file/d/1vxbZzd8aQTqe88PNe3jhVTN0bJbRdo7H/view?usp=share_link
+FILEID = 1vxbZzd8aQTqe88PNe3jhVTN0bJbRdo7H
+https://drive.google.com/uc?export=download&id=FILEID
+https://drive.google.com/uc?export=download&id=1vxbZzd8aQTqe88PNe3jhVTN0bJbRdo7H
+#unpack file into directory you choose like tmpenv
+
+# install required python packages
+
+activate env environement
+run app:
+deactivate env
+python -m pip install -r requirements.txt
+
+
+##############################################################
+to create requiremenst.txt file 
+jf@jf1:~/MAVGCSenv132$ pip3 freeze >requirements.txt
+##############################################################
+jf@jf1:~$ tar -zcvf MAVGCSenv134.tar.gz MAVGCSenv134
+jf@jf1:~$ cd MAVGCSenv134
+jf@jf1:~/MAVGCSenv134$ 
+jf@jf1:~$ cd MAVGCSenv134
+jf@jf1:~/MAVGCSenv134$ ls
+bin                    mapbox-example-20230209.py  requirements.txt.orig
+common.xml             mavlink131.py               requirements.txt.works
+contLCDClock.py        mavlink132.py               settingUpVenvFeb14-2023.txt
+ContLCDClock.py        mavlink133.py               share
+ContMdi.py             mavlink134.py               sitl.py
+include                mavlink_win_class.py        viewLCDClock.cmd
+lib                    mavlink_win_clock_class.py  viewLCDClock.py
+lib64                  MavVars.py                  viewLCDClock.pyw
+MainWindowMdi.py       __pycache__                 viewLCDClock.ui
+mapbox20230122.py      pyG5                        viewMdi.cmd
+mapbox20230209-2.py    pyG5test.py                 viewMdi.py
+mapbox20230209.py      pyvenv.cfg                  viewMdi.pyw
+mapbox20230213-map.py  requirements.txt            viewMdi.ui
+jf@jf1:~/MAVGCSenv134$ 
+
+
+
+##############################################################
+unpack and install
+
+  #cd to a dir to create new python3 venv dir homedir
+1. $ cd ~ (your home dir)
+
+  #download gzip from google drive MAVGCSenv130.tar.gz 
+  
+2. in browser get and download archive https://drive.google.com/file/d/19LrXMyKB2iBbJIoNWBW54-RlgCcncsM7/view?usp=share_link 
+  # tar.gz archive is 128mb you will need total unpacked sized of 428 MB user space to run app
+  #   unpack archive , a. let archive manager unpack dir MAVGCSenv130 into local virtual env dir MAVGCSenv130 env dir:
+  # OR b. manually unpack if not using archive manager for MAVGCSenv130.tar.gz  $ tar -zxvf  MAVGCSenv130.tar.gz MAVGCSenv130
+3.$ cd MAVGCSenv130         #unpacking should have 'created MAVGCSenv130 dir'
+4.#now install the required python packages for this app only in the venv folder
+
+$ python3 -m pip install -r requirements.txt
+5.
+  #activate venv environement
+$ source ./bin/activate
+(env) jf@jf1:~/MAVGCSenv132$ 
+(env) jf@jf1:~/MAVGCSenv132$ python3 mavlink134.py
+(env) jf@jf1:deactivate
+jf@jf1:~/MAVGCSenv132$ 
+
+6.
+  #run app:
+$ (venv) python3 mavlink130.py
+
+  #deactivate virtual env
+$ deactivate 
+

@@ -1,0 +1,153 @@
+jf@jf1:~$ pwd
+/home/jf
+jf@jf1:~$ cd MAVGCSenv134
+jf@jf1:~/MAVGCSenv134$ echo "# JerryGCS" >> README.md
+jf@jf1:~/MAVGCSenv134$ git init
+Initialized empty Git repository in /home/jf/MAVGCSenv134/.git/
+jf@jf1:~/MAVGCSenv134$ git add README.md 
+jf@jf1:~/MAVGCSenv134$ git commit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'jf@jf1.(none)')
+jf@jf1:~/MAVGCSenv134$ git config --global user.email jerryfat@verizon.net
+jf@jf1:~/MAVGCSenv134$ git branch -M main
+error: refname refs/heads/master not found
+fatal: Branch rename failed
+
+jf@jf1:~/MAVGCSenv134$ git commit -m "first commit"
+[master (root-commit) bc4ec10] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+ 
+jf@jf1:~/MAVGCSenv134$ git branch -M main
+jf@jf1:~/MAVGCSenv134$ git remote add origin git@github.com:jerryfat/JerryGCS.git
+jf@jf1:~/MAVGCSenv134$ git push -u origin main
+The authenticity of host 'github.com (140.82.112.3)' can't be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.112.3' (ECDSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+jf@jf1:~/MAVGCSenv134$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+jf@jf1:~/MAVGCSenv134$ git add .
+jf@jf1:~/MAVGCSenv134$ git push -u origin main
+Warning: Permanently added the ECDSA host key for IP address '140.82.113.3' to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+jf@jf1:~/MAVGCSenv134$ ^C
+jf@jf1:~/MAVGCSenv134$ ssh -T jerryfat@github.com
+Warning: Permanently added the ECDSA host key for IP address '140.82.114.3' to the list of known hosts.
+jerryfat@github.com: Permission denied (publickey).
+
+
+
+jf@jf1:~/MAVGCSenv134$ git branch -M main
+jf@jf1:~/MAVGCSenv134$ git push -u origin main
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Standard way to adding all the files to repository is git add -A; git commit; git push, but it does not succeed when trying to add gigabytes of files; fatal: The remote end hung up unexpectedly error arises even when the HTTP buffer size is increased. Therefore I made the following shell script, gitadd, to add all the files in the current directory step by step.
+
+
+jf@jf1:~/MAVGCSenv134$ ssh-add -l
+The agent has no identities.
+jf@jf1:~/MAVGCSenv134$ ssh-add -l -E md5
+The agent has no identities.
+jf@jf1:~/MAVGCSenv134$ ssh-keygen -t ed25519 -C "jerryfat@verizon.net"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/jf/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/jf/.ssh/id_ed25519
+Your public key has been saved in /home/jf/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:1VrpqdQYQclJEVrIEH1oUrCoucBe3SEvmdsG5NqcegM jerryfat@verizon.net
+The key's randomart image is:
++--[ED25519 256]--+
+|      +B.*B=     |
+|     ...*o=o .   |
+|    .o.+..o +    |
+|.  o+ * .. B .   |
+|..o. B oS + +    |
+|...E+ *  . .     |
+| ....= o  .      |
+|    .o.          |
+|   .. .          |
++----[SHA256]-----+
+jf@jf1:~/MAVGCSenv134$ ^C
+jf@jf1:~/MAVGCSenv134$ ssh-add -1
+unknown option -- 1
+usage: ssh-add [-cDdKkLlqvXx] [-E fingerprint_hash] [-S provider] [-t life]
+               [file ...]
+       ssh-add -s pkcs11
+       ssh-add -e pkcs11
+       ssh-add -T pubkey ...
+jf@jf1:~/MAVGCSenv134$ ssh-add -l
+The agent has no identities.
+jf@jf1:~/MAVGCSenv134$ /home/jf/.ssh/id_ed25519.pub
+bash: /home/jf/.ssh/id_ed25519.pub: Permission denied
+jf@jf1:~/MAVGCSenv134$ cat /home/jf/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDFl8UL3yfkMA7ruJ3fR58ln7kXjxWQsQAYsImuKZonu jerryfat@verizon.net
+134$ 
+
+jf@jf1:~/MAVGCSenv134$ eval "$(ssh-agent -s)"
+Agent pid 8122
+
+jf@jf1:~/MAVGCSenv134$ ssh-add ~/.ssh/id_ed25519
+Identity added: /home/jf/.ssh/id_ed25519 (jerryfat@verizon.net)
+
+
+jf@jf1:~/MAVGCSenv134$ ssh-add -l
+256 SHA256:1VrpqdQYQclJEVrIEH1oUrCoucBe3SEvmdsG5NqcegM jerryfat@verizon.net (ED25519)
+
+cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcnP/MBvscMuqdMLOwKzTOGSwOl0SfbYoL8hyGrCTWAV5ffRz1HUV+Rrbwh7n/aUgS3JJ6WkLuTK+M/iJLnjeteVkOo/4r/VO5WU8n5mLeOuhC3Zza6tYRFfcDw2cWHxvSlkIGVa9K/Pmncx8al/2VEMzi5s2eXD+mHhlT3cC4SuyRsugU7GKBhvlFAy5ISmyvFdewCLWylFwcWwJsEcUZL4rhWupSRZzI3WNmE/IEDv7ThLo5LlT+4oEjoOKMMRvs1JbiPNk5Ez4Mf9hbTQbyQHocnvYg0S3S0Ug1g1gxjMVRv7XkBWju3oPG3j7xBRxIFjzuWDlqKSsRt7GetNkpZ52D+07ZSyT5b7wgFnTZk8qJRjwAnU4tDCp65zqtW8QQsMB7L1M7ujqWNk+dGxBGei4ZxedOerEtfTja4li7nJUAT4+v+LGl/A3egDZm/km08HLlQUl3uisDDvMh9oNMSzni+MyrRUxMjq45dYwH8CxAJcGAjZZ6EqS6EOjxuhU= jf@jf1
+
+add key to github as authenticating login to github Settings->keys->ssh
+past contents of id_rsa.pub into github new key text area, click add new key
+
+jf@jf1:~/MAVGCSenv134$ git branch -M main
+jf@jf1:~/MAVGCSenv134$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 217 bytes | 217.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:jerryfat/JerryGCS.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+jf@jf1:~/MAVGCSenv134$ 
+
+Standard way to adding all the files to repository is git add -A; git commit; git push
+add a README.md
+Sign in to GitHub and create a repository with New reposiroty button (Don't check Initialize this repository with a README). If there is no REAME.md, create a tentative file with
+
+echo "# test" >> README.md
+
+and run the following commands to initialize the repository and add README.md (Rewrite USER and REP).
+
+git init
+git add README.md
+git commit -m "First commit"
+git remote add origin git@github.com:USER/REP.git
+git push -u origin master
+
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+https://sekika.github.io/2016/06/06/github-many-files/
