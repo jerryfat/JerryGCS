@@ -34,6 +34,12 @@ $
 $ git clone git@github.com:jerryfat/JerryGCS.git
 $ cd JerryGCS/
 $ python3 -m pip install -r requirements.txt
+using local virtual python3
+$ source ./bin/activate
+(env) jf@jf1:~/MAVGCSenv132$ 
+(env) jf@jf1:~/MAVGCSenv132$ python3 mavlink134.py
+(env) jf@jf1:deactivate
+using global python3
 $ python3 mavlink134.py 
  
  
