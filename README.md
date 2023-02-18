@@ -7,9 +7,9 @@ unpack and install
   #download gzip from google drive MAVGCSenvXXX.tar.gz 
   
 2. in browser get and download archive https://drive.google.com/file/d/19LrXMyKB2iBbJIoNWBW54-RlgCcncsM7/view?usp=share_link 
-  # tar.gz archive is 128mb you will need total unpacked sized of 428 MB user space to run app
-  #   unpack archive , a. let archive manager unpack dir MAVGCSenv130 into local virtual env dir MAVGCSenv130 env dir:
-  # OR b. manually unpack if not using archive manager for MAVGCSenv130.tar.gz  $ tar -zxvf  MAVGCSenv130.tar.gz MAVGCSenv130
+# tar.gz archive is 128mb you will need total unpacked sized of 428 MB user space to run app
+#   unpack archive , a. let archive manager unpack dir MAVGCSenv130 into local virtual env dir MAVGCSenv130 env dir:
+# OR b. manually unpack if not using archive manager for MAVGCSenv130.tar.gz  $ tar -zxvf  MAVGCSenv130.tar.gz MAVGCSenv130
 3.$ cd MAVGCSenv130         #unpacking should have 'created MAVGCSenv130 dir'
 4.now install the required python packages for this app only in the venv folder
 
@@ -57,6 +57,7 @@ using global python3
 $ python3 mavlink134.py 
  
  jf@jf1:~/Downloads$ wget https://github.com/jerryfat/JerryGCS/archive/refs/heads/main.zip
+ 
 Will not apply HSTS. The HSTS database must be a regular and non-world-writable file.
 ERROR: could not open HSTS store at '/home/jf/.wget-hsts'. HSTS will be disabled.
 --2023-02-16 21:14:06--  https://github.com/jerryfat/JerryGCS/archive/refs/heads/main.zip
@@ -75,7 +76,7 @@ main.zip                [  <=>               ]  22.21M  2.99MB/s               ^
 
 
 
- Github needs a public token if cloning my JerryGCS
+ Github needs a public token if uploading cloning my JerryGCS
 
 Instead of clone command use browser to download zip file and unpack using ubntu archive manager that starts automatically
 
