@@ -85,6 +85,6 @@ Instead of clone command use browser to download zip file and unpack using ubntu
   $ firefox https://github.com/jerryfat/JerryGCS/archive/refs/heads/main.zip
  2. $ archive-manager will ask where to extract: I chose /home/jf/JerryGCS-main
  3. $ cd /home/jf/JerryGCS-main (where u extracted)
- 4. $ python3 -m pip install -r requirements.txt$ python3 mavlink134.py
+ 4. $ python3 -m pip install -r requirements.txt python3 mavlink134.py
  5. $ python3 mavlink134.py
 # JerryGCS
