@@ -258,8 +258,8 @@ unpack and install
 4.#now install the required python packages for this app only in the venv folder
 
 $ python3 -m pip install -r requirements.txt
-5.
-  #activate venv environement
+
+5. #activate venv environement
 $ source ./bin/activate
 (env) jf@jf1:~/MAVGCSenv132$ 
 (env) jf@jf1:~/MAVGCSenv132$ python3 mavlink134.py
@@ -272,4 +272,31 @@ $ (venv) python3 mavlink130.py
 
   #deactivate virtual env
 $ deactivate 
+
+
+github:
+Quick setup — if you’ve done this kind of thing before
+or
+
+Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
+…or create a new repository on the command line
+
+echo "# testgithubrepo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jerryfat/testgithubrepo.git
+git push -u origin main
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/jerryfat/testgithubrepo.git
+git branch -M main
+git push -u origin main
+
+…or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+-------------------------------------------------------------------------------------------
 
